@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import styled from 'styled-components'
-
+import { withRouter } from "react-router-dom";
+import {HeaderContainer} from '../styles/shared-grid-styles'
 import Header from '../components/Header'
 import ContactCard from '../components/resume/ContactCard'
 import CoursesCard from '../components/resume/CoursesCard'
@@ -48,7 +47,9 @@ class Resume extends Component {
 
     return (
       <div>
-        <Header pageTitle={pageTitle} headerText={headerText} />
+        <HeaderContainer>
+          <Header pageTitle={pageTitle} headerText={headerText} />
+        </HeaderContainer>
         <ContactCard contact={contact} />
         <EducationCard education={education}/>
         <CoursesCard courses={courses} />
@@ -59,4 +60,4 @@ class Resume extends Component {
   }
 }
 
-export default Resume;
+export default withRouter(Resume);

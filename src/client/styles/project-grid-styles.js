@@ -10,11 +10,13 @@ export const ProjectListContainer = styled.div`
 export const ProjectCard = styled.div`
   transition: all .4s;
   border-radius: 10px;
+  display: inline-block;
+  overflow: hidden;
   &:hover {
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
     cursor: pointer;
   }
-`
+  `
 
 export const ProjectCardDetails = styled.div`
   margin: 30px 20px;
@@ -32,7 +34,7 @@ export const ProjectCategory = styled.div`
 `
 export const ProjectName = styled.div`
   font-weight: normal;
-  font-size: 1.3em;
+  font-size: 1.2em;
   grid-column: 1 / 2;
   grid-area: name;
 `
@@ -46,5 +48,9 @@ export const ProjectDate = styled.div`
 export const ProjectImg = styled.img`
   width: 100%;
   height: auto;
-  object-fit: cover;
+  transition: all .4s;
+  ${ProjectCard}:hover & {
+    transform: scale(1.1) translateY(-10px);
+
+  }
 `

@@ -6,7 +6,7 @@ const ButtonContainer = styled(Link)`
   background-image: linear-gradient(to right, #02aab0 0%, #00cdac 51%, #02aab0 100%);
   background-size: 200% auto;
   transition: all .5s;
-  padding: 20px 25px 20px;
+  padding: 20px 25px;
   border-radius: 10px;
   margin-bottom: 100px;
   display: inline-block;
@@ -17,6 +17,10 @@ const ButtonContainer = styled(Link)`
 `
 const ButtonImage = styled.img`
   vertical-align: middle;
+  transition: all .5s;
+  ${ButtonContainer}:hover & {
+    transform: translateX(10px);
+  }
 `
 
 const TitleText= styled.div`

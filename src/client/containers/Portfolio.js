@@ -6,30 +6,7 @@ import Header from "../components/Header";
 import GradientButton from "../components/GradientButton";
 import TagList from "../components/TagList";
 import ProjectList from '../components/ProjectList'
-
-
-const HeaderContainer = styled.div`
-  grid-area: 'header';
-  margin-top: 100px;
-`
-
-const ContentContainer= styled.div`
-  grid-area: 'main';
-`
-
-const FooterContainer = styled.div`
-  grid-area: 'footer';
-  height: 100px;
-`
-
-const GridContainer = styled.div`
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
-`
+import {GridContainer, HeaderContainer, ContentContainer, FooterContainer} from '../styles/shared-grid-styles'
 
 class Portfolio extends Component {
   constructor(props) {
@@ -80,7 +57,7 @@ class Portfolio extends Component {
           <GradientButton title={buttonTitle} iconUrl={iconUrl} />
         </HeaderContainer>
         <ContentContainer>
-          <TagList tags={tags}/>
+          <TagList tags={tags} tag={tag}/>
           <ProjectList projects={projects} tags={tags} tag={tag} />
         </ContentContainer>
         <FooterContainer />

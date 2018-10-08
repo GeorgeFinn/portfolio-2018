@@ -21,8 +21,7 @@ ReactDom.render(
 
 injectGlobal`
   main, html, body {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Roboto,"Open Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 20px;
     margin: 0 auto;

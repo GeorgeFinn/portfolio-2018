@@ -24,6 +24,7 @@ const TagButton = styled.div`
   border-radius: 20px;
   padding: 15px 25px;
   margin-left: 30px;
+  background: ${props => props.active ? 'black' : 'white'}
   &:hover {
     cursor: pointer;
     background-color: #f3f3f3;
@@ -38,14 +39,14 @@ const TagImage = styled.img`
 
 
 const Tag = props => (
-  <TagButton>
+  <TagButton active={props.tag === props.tag > -1 }>
     <TagName>{props.tag}</TagName>
     <TagImage src={require("../public/images/x-button.svg")} />
   </TagButton>
 )
 
-const TagList = ({ tags }) => {
-  const tagItems = tags.map(tag => <Tag key={tag.toString()} tag={tag.toString()}/>)
+const TagList = ({ tags, tag }) => {
+  const tagItems = tags.map(t => <Tag key={t.toString()} tag={t.toString()}/>)
   return <TagsContainer>
     <TagTitle>
       Tags:
