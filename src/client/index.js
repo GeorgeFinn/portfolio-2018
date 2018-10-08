@@ -1,0 +1,44 @@
+import React, { Fragment } from "react";
+import ReactDom from "react-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { injectGlobal } from 'styled-components';
+
+import App from "./containers/App";
+import Portfolio from "./containers/Portfolio"
+import Resume from './containers/Resume'
+
+ReactDom.render(
+    <Router>
+      <Fragment>
+        <App>
+          <Route exact path="/" component={Portfolio} />
+          <Route exact path="/resume" component={Resume} />
+        </App>
+      </Fragment>
+    </Router>,
+  document.getElementById("app")
+);
+
+injectGlobal`
+  main, html, body {
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 0;
+    height: 100vh;
+    width: 80vw;
+  }
+  a {
+    color:#000;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $light_blue;
+    }
+  }
+`
+
+module.hot.accept();
