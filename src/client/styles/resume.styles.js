@@ -1,37 +1,30 @@
 import styled from 'styled-components'
 
 export const CourseCardContainer = styled.div`
-  width: 100%;
-  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 80px 1fr;
   border-radius: 14px;
   border: 1px solid rgb(198, 208, 235);
   box-shadow: rgba(198, 208, 235, 0.5) 0px 10px 20px;
+  align-items: center;
+  margin-bottom: 15px;
 `
 
-export const CourseCardLeft = styled.span`
-  width: 50px;
-  height: 100%;
-  padding: 20px 15px;
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: middle;
-  padding-right: 20px;
+export const CourseCardLeft = styled.div`
   text-align: center;
   color: #3BDFD2;
   font-weight: 700;
   font-size: 1.5em;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `
 
-export const CourseCardRight = styled.span`
-  padding: 20px 15px;
-  vertical-align: middle;
-  text-align: center;
+export const CourseCardRight = styled.div`
   font-weight: normal;
 `
 
 export const LanguageCardContainer = styled.div`
   text-align: center;
-  width: 100%;
   height: 100%;
   border-radius: 14px;
   overflow: hidden;
