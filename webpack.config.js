@@ -22,7 +22,7 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       { test: /\.html$/, use: [{loader: 'html-loader', options: { minimize: true }}]},
-      { test: /\.svg$/, loader: 'file-loader' }
+      { test: /\.(jpg|svg)$/, loader: 'file-loader'}
     ]
   },
   plugins: [

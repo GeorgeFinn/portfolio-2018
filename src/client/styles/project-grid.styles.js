@@ -16,7 +16,7 @@ export const ProjectCard = styled.div`
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
     cursor: pointer;
   }
-  `
+`
 
 export const ProjectCardDetails = styled.div`
   margin: 30px 20px;
@@ -31,6 +31,7 @@ export const ProjectCategory = styled.div`
   font-weight: 600;
   font-size: .8em;
   grid-area: category;
+  margin-bottom: 5px;
 `
 export const ProjectName = styled.div`
   font-weight: normal;
@@ -51,6 +52,5 @@ export const ProjectImg = styled.img`
   transition: all .4s;
   ${ProjectCard}:hover & {
     transform: scale(1.1) translateY(-10px);
-
   }
 `

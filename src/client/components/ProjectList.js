@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ProjectCard, ProjectImg, ProjectCardDetails, ProjectCategory, ProjectDate, ProjectName, ProjectListContainer } from '../styles/project-grid-styles'
+import {ProjectCard, ProjectImg, ProjectCardDetails, ProjectCategory, ProjectDate, ProjectName, ProjectListContainer } from '../styles/project-grid.styles'
 
 const Project = props => (
   <ProjectCard>
@@ -12,9 +12,9 @@ const Project = props => (
   </ProjectCard>
 );
 
-const ProjectList = ({ projects, tag }) => {
+const ProjectList = ({ projects, currTag }) => {
   const projectItems = projects
-    .filter(({category}) => category === tag || tag === 'All')
+    .filter(({category}) => category === currTag || currTag === 'All')
     .map(project => <Project key={project.name} name={project.name} category={project.category} imageUrl={project.imageUrl} />)
   return <ProjectListContainer>{projectItems}</ProjectListContainer>
 }

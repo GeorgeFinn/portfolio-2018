@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const TagsContainer = styled.div`
   margin-bottom: 80px;
 `
-
 const TagTitle = styled.div`
   font-size: .8em;
   font-weight: 200;
@@ -13,43 +12,45 @@ const TagTitle = styled.div`
 const TagName = styled.span`
   display: inline-block;
   vertical-align: middle;
-  margin-right: 20px;
+  text-align: center;
 `
-
-const TagButton = styled.div`
+const ToggledButton = styled.div`
   display: inline-block;
-  background: #F3F5F6;
+  background: #f3f3f3;
   font-size: .8em;
   font-weight: 200;
   border-radius: 20px;
-  padding: 15px 25px;
+  padding: 10px 20px;
   margin-left: 30px;
-  background: ${props => props.active ? 'black' : 'white'}
+  transition: all .4s ease;
+  border: 1px solid transparent;
   &:hover {
+    border: 1px solid #ddd;
     cursor: pointer;
     background-color: #f3f3f3;
   }
 `
-
-const TagImage = styled.img`
-  vertical-align: middle;
-  height: 15px;
-  width: 15px;
+const UnToggledButton = styled(ToggledButton)`
+  background: #fff;
+  border: 1px solid #ddd;
 `
 
+const Tag = props => {
+  const TagButton =
+    props.tag === props.currTag ? ToggledButton : UnToggledButton;
+  return (
+    <TagButton onClick={props.handleClick}>
+      <TagName>{props.tag}</TagName>
+    </TagButton>
+  );
+};
 
-const Tag = props => (
-  <TagButton active={props.tag === props.tag > -1 }>
-    <TagName>{props.tag}</TagName>
-    <TagImage src={require("../public/images/x-button.svg")} />
-  </TagButton>
-)
 
-const TagList = ({ tags, tag }) => {
-  const tagItems = tags.map(t => <Tag key={t.toString()} tag={t.toString()}/>)
+const TagList = ({ tags, currTag, handleClick }) => {
+  const tagItems = tags.map(t => <Tag handleClick={handleClick} key={t} tag={t} currTag={currTag}/>, this)
   return <TagsContainer>
     <TagTitle>
-      Tags:
+      Filter:
     </TagTitle>
     {tagItems}</TagsContainer>
 }

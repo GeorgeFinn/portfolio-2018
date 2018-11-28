@@ -6,6 +6,13 @@ import { injectGlobal } from 'styled-components';
 import App from "./containers/App";
 import Portfolio from "./containers/Portfolio"
 import Resume from './containers/Resume'
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Montserrat:300,400,600,700', 'sans-serif']
+  }
+});
 
 ReactDom.render(
     <Router>

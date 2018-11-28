@@ -6,14 +6,15 @@ import Header from "../components/Header";
 import GradientButton from "../components/GradientButton";
 import TagList from "../components/TagList";
 import ProjectList from '../components/ProjectList'
-import {GridContainer, HeaderContainer, ContentContainer, FooterContainer} from '../styles/shared-grid-styles'
+import {PortfolioContainer, HeaderContainer, ContentContainer, FooterContainer} from '../styles/shared-grid.styles'
 
 class Portfolio extends Component {
   constructor(props) {
     super(props);
     this.state = {
       projects: [],
-      tags: []
+      tags: [],
+      currTag: []
     };
   }
 
@@ -27,7 +28,7 @@ class Portfolio extends Component {
       }
     });
     tags.unshift('All')
-    this.setState({ projects: data, tags: tags, tag: 'All' });
+    this.setState({ projects: data, tags: tags, currTag: 'All' });
     console.log(this.state);
   }
 
@@ -41,27 +42,30 @@ class Portfolio extends Component {
       .catch(err => console.log(err));
   }
 
+  handleClick = e => {
+    this.setState({ currTag: e.target.innerText })
+  }
+
   render() {
     const pageTitle = "portfolio";
     const headerText = "Welcome to my playground";
     const buttonTitle = "View Resume";
     const iconUrl = require("../public/images/arrow.svg");
 
-    const { children } = this.props;
-    const { tags, projects, tag } = this.state;
+    const { tags, projects, currTag } = this.state;
 
     return (
-      <GridContainer>
+      <PortfolioContainer>
         <HeaderContainer>
           <Header pageTitle={pageTitle} headerText={headerText} />
           <GradientButton title={buttonTitle} iconUrl={iconUrl} />
         </HeaderContainer>
         <ContentContainer>
-          <TagList tags={tags} tag={tag}/>
-          <ProjectList projects={projects} tags={tags} tag={tag} />
+          <TagList tags={tags} handleClick={this.handleClick} currTag={currTag}/>
+          <ProjectList projects={projects} tags={tags} currTag={currTag} />
         </ContentContainer>
         <FooterContainer />
-      </GridContainer>
+      </PortfolioContainer>
     );
   }
 }

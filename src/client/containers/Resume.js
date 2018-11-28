@@ -1,63 +1,62 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import {HeaderContainer} from '../styles/shared-grid-styles'
+import {ResumeContainer, AboutContainer, CourseworkContainer, LanguagesContainer} from '../styles/shared-grid.styles'
+import { Heading1, Heading3, RegularLarge, SecondaryHeading1 } from '../styles/text.styles'
 import Header from '../components/Header'
-import ContactCard from '../components/resume/ContactCard'
-import CoursesCard from '../components/resume/CoursesCard'
-import EducationCard from '../components/resume/EducationCard'
-import SkillsCard from '../components/resume/SkillsCard'
+import CoursesList from '../components/resume/CoursesList'
+import LanguagesList from '../components/resume/LanguagesList'
 
 class Resume extends Component {
   render() {
-    const pageTitle = "Resume";
-    const headerText = "Developer Resume";
-    const contact = {
-      name: 'George Finn',
-      number: '(224) 392 6225',
-      email: 'george.finn@me.com'
-    }
-    const education = {
-      major: 'B.S. Computer Science',
-      minor: 'Math',
-      school: 'Rose-Hulman Institute of Technology',
-      time: 'July 2014 - May 2019'
-    }
     const courses =['Web Development',
       'Object-Oriented Programming',
       'Database Systems',
       'Software Design Patterns',
       'Computer Architecture I,II',
-      'Augmented Reality Experiences',
       'Design &  Analysis of Algorithms',
       'Theory of Computation',
-      'Discrete & Combinational Algebra I, II']
+      'Discrete & Combinational Algebra I, II',
+      'Artificial Intelligence',
+      'Augmented Reality Experiences',
+      'Advanced Angular 4']
 
-    const languages = [
-      { name: 'HTML, CSS', comfort: 90 },
-      { name: 'JavaScript', comfort: 90 },
-      { name: 'TypeScript', comfort: 80 },
-      { name: 'C++', comfort: 70 },
-    ]
-    const technologies = [
-      { name: 'MERN Stack', comfort: 80 },
-      { name: 'React React-Native', comfort: 90 },
-      { name: 'Angular4', comfort: 70 },
-      { name: 'Webpack, Babel', comfort: 85 },
-    ]
+      const languages = [
+        'HTML5',
+        'CSS3',
+        'JavaScript',
+        'React',
+        'TypeScript',
+        'Swift',
+        'Python',
+        'C++',
+        'Java',
+        'Angular4'
+      ]
 
     return (
-      <div>
-        <HeaderContainer>
-          <Header pageTitle={pageTitle} headerText={headerText} />
-        </HeaderContainer>
-        <ContactCard contact={contact} />
-        <EducationCard education={education}/>
-        <CoursesCard courses={courses} />
-        <SkillsCard skills={languages} />
-        <SkillsCard skills={technologies} />
-      </div>
+      <ResumeContainer>
+        <Heading1>George<br/>Finn</Heading1>
+        <SecondaryHeading1>Resume</SecondaryHeading1>
+        <AboutContainer>
+          <Heading3>I am a Computer Science major<br/>from Chicago, Illinois</Heading3>
+          <RegularLarge>I am the youngest of three.<br/>
+            In my free time I like to design.<br/>
+            My most prized possession is my <br/>
+            @me.com email domain.</RegularLarge>
+        </AboutContainer>
+        <CourseworkContainer>
+          <Heading3>Academic Coursework</Heading3>
+          <CoursesList courses={courses} />
+        </CourseworkContainer>
+        <LanguagesContainer>
+          <Heading3>Programming Languages</Heading3>
+          <div>Here is a list of various languages <br/>
+          I have learned over the past couple<br/>
+          years.</div>
+        <LanguagesList languages={languages} />
+        </LanguagesContainer>
+      </ResumeContainer>
     );
   }
 }
 
-export default withRouter(Resume);
+export default Resume;
