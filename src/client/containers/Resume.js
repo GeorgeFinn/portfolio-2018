@@ -7,6 +7,7 @@ import LanguagesList from '../components/resume/LanguagesList'
 import ProjectsList from '../components/resume/ProjectsList'
 import BackToTopButton from '../components/resume/BackToTopButton'
 import GradientEmailButton from '../components/GradientEmailButton'
+import ScrollText from '../components/ScrollText'
 import {HeaderContainer} from '../styles/shared-grid.styles'
 
 
@@ -64,7 +65,8 @@ class Resume extends Component {
     const pageTitle = "resume";
     const headerText = "Developer Resume";
     const buttonTitle = "Email Me";
-
+    const texts = ['Rose-Hulman Senior', 'Computer Science Major', 'Math Minor']
+    const hobbies = ['cook', 'paint', 'build speakers', 'design', 'work out']
     return (
       <ResumeContainer>
       <HeaderContainer>
@@ -72,11 +74,11 @@ class Resume extends Component {
           <GradientEmailButton url='mailto:george.finn@me.com' title={buttonTitle} iconUrl={composeButton} />
       </HeaderContainer>
         <AboutContainer>
-          <Heading3>I am a Computer Science major<br/>from Chicago, Illinois</Heading3>
+          <Heading3>I am a <ScrollText texts={texts}/><br/>from Chicago, Illinois</Heading3>
           <RegularLarge>I am the youngest of three.<br/>
-            In my free time I like to design.<br/>
+            In my free time I like to <ScrollText texts={hobbies}/>.<br/>
             My most prized possession is my <br/>
-            @me.com email domain.</RegularLarge>
+            <span style={{ color: "#22AA99", fontWeight: "600"}}>@me.com</span> email domain.</RegularLarge>
         </AboutContainer>
         <CourseworkContainer>
           <Heading3>Academic Coursework</Heading3>

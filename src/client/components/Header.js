@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade'
 
 const LogoLink = styled(Link)`
   display: inline-block;
@@ -28,13 +29,13 @@ const HeaderText = styled.div`
 
 const Header = ({pageTitle, headerText}) => {
   return (
-    <div>
+    <Fade top>
       <LogoLink to='/'>
         <LogoImg src='https://s3.us-east-2.amazonaws.com/georgefinn-portfolio/georgefinn.svg'/>
       </LogoLink>
       <PageTitle>{pageTitle}</PageTitle>
       <HeaderText>{headerText}</HeaderText>
-    </div>
+    </Fade>
 
   )
 }

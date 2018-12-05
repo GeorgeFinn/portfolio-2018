@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
+import Fade from 'react-reveal/Fade'
 
 const TagsContainer = styled.div`
   margin-bottom: 80px;
@@ -48,11 +49,12 @@ const Tag = props => {
 
 const TagList = ({ tags, currTag, handleClick }) => {
   const tagItems = tags.map(t => <Tag handleClick={handleClick} key={t} tag={t} currTag={currTag}/>, this)
-  return <TagsContainer>
+  return <Fade><TagsContainer>
     <TagTitle>
       Filter:
     </TagTitle>
     {tagItems}</TagsContainer>
+    </Fade>
 }
 
 export default TagList
