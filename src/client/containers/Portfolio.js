@@ -58,7 +58,7 @@ class Portfolio extends Component {
       <PortfolioContainer>
         <HeaderContainer>
           <Header pageTitle={pageTitle} headerText={headerText} />
-          <GradientButton title={buttonTitle} iconUrl={iconUrl} />
+          <GradientButton url='/resume' title={buttonTitle} iconUrl={iconUrl} />
         </HeaderContainer>
         <ContentContainer>
           <TagList tags={tags} handleClick={this.handleClick} currTag={currTag}/>

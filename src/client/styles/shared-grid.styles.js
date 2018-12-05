@@ -29,24 +29,31 @@ export const ResumeContainer = styled.div`
 `
 
 export const AboutContainer = styled.div`
-  margin-bottom: 250px;
+  margin-top: 50px;
+  margin-bottom: 200px;
 `
 
 export const CourseworkContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  margin-bottom: 250px;
+  margin-bottom: 200px;
 `
 
 export const LanguagesContainer = styled.div`
-  margin-bottom: 250px;
+  margin-bottom: 200px;
 `
 
 export const LanguagesGridContainer = styled.div`
   margin-top: 50px;
   display: grid;
-  grid-gap: 15px;
+  grid-gap: 25px;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
-  grid-auto-rows: 225px;
+`
+export const ProjectsContainer = styled.div`
+  margin-bottom: 50px;
+`
+
+export const ProjectsListContainer = styled.div`
+  margin-top: 100px;
 `

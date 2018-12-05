@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const ButtonContainer = styled(Link)`
+const ButtonContainer = styled.a`
   background-image: linear-gradient(to right, #02aab0 0%, #00cdac 51%, #02aab0 100%);
   background-size: 200% auto;
   transition: all .5s;
@@ -31,8 +31,8 @@ const TitleText= styled.div`
     margin-right: 40px;
 `
 
-const GradientButton = ({ url, title, iconUrl }) => (
-  <ButtonContainer to={url}>
+const GradientEmailButton = ({ url, title, iconUrl }) => (
+  <ButtonContainer href={url}>
     <TitleText>
       {title}
     </TitleText>
@@ -40,4 +40,4 @@ const GradientButton = ({ url, title, iconUrl }) => (
   </ButtonContainer>
 );
 
-export default GradientButton
+export default GradientEmailButton
