@@ -5,15 +5,16 @@ const path = require('path');
 const { NODE_ENV } = process.env;
 
 module.exports = {
-  devtool: 'eval-source-map',
+  devtool: 'source-map',
   entry: [
       path.resolve(__dirname, 'src/client/index.js'),
       'webpack-hot-middleware/client?reload=true'
     ],
   mode: 'development',
   output: {
-    path: path.join(__dirname, './dist'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js',
+    publicPath: "/"
   },
   module: {
     rules: [
