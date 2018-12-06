@@ -33,7 +33,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      title: 'MERN boilerplate',
+      title: 'georgefinn',
       template: path.resolve(__dirname, 'src/client/public/index.html'),
       inject: 'body',
       favicon: 'favicon.ico'

@@ -25,7 +25,7 @@ router.post('/add', (req, res) => {
       errors.project = 'Project already exists'
       return res.status(400).json(errors)
     } else {
-      const newProject = new Project({name: req.body.name, category: req.body.category, imageUrl: req.body.imageUrl})
+      const newProject = new Project({name: req.body.name, category: req.body.category, imageUrl: req.body.imageUrl, url: req.body.url})
         .save()
         .then(project => res.json(project))
         .catch(err => res.json(err))

@@ -20,6 +20,7 @@ export const SecondaryHeading2 = styled(Heading2)`
 export const Heading3 = styled.h3`
   margin-top: 0;
   font-size: 1.5em;
+  margin-bottom: 20px;
 `
 
 export const SecondaryHeading3 = styled(Heading3)`

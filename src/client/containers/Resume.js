@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Fade from 'react-reveal/Fade'
+
 import {ResumeContainer, AboutContainer, CourseworkContainer, LanguagesContainer, ProjectsContainer} from '../styles/shared-grid.styles'
 import { Heading1, Heading3, RegularLarge, SecondaryHeading1, Heading2, SecondaryHeading2 } from '../styles/text.styles'
 import Header from '../components/Header'
@@ -73,6 +75,7 @@ class Resume extends Component {
         <Header pageTitle={pageTitle} headerText={headerText} />
           <GradientEmailButton url='mailto:george.finn@me.com' title={buttonTitle} iconUrl={composeButton} />
       </HeaderContainer>
+        <Fade left>
         <AboutContainer>
           <Heading3>I am a <ScrollText texts={texts}/><br/>from Chicago, Illinois</Heading3>
           <RegularLarge>I am the youngest of three.<br/>
@@ -80,6 +83,7 @@ class Resume extends Component {
             My most prized possession is my <br/>
             <span style={{ color: "#22AA99", fontWeight: "600"}}>@me.com</span> email domain.</RegularLarge>
         </AboutContainer>
+        </Fade>
         <CourseworkContainer>
           <Heading3>Academic Coursework</Heading3>
           <CoursesList courses={courses} />
@@ -95,7 +99,9 @@ class Resume extends Component {
           <Heading2>Projects and Experience</Heading2>
           <ProjectsList projects={projects} />
         </ProjectsContainer>
-        <BackToTopButton scrollStepInPx="100" delayInMs="16.66"/>
+        <Fade bottom>
+          <BackToTopButton scrollStepInPx="100" delayInMs="16.66"/>
+        </Fade>
       </ResumeContainer>
     );
   }
