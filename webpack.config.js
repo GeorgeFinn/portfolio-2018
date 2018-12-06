@@ -14,7 +14,7 @@ module.exports = {
   },
   mode: 'development',
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, './dist'),
     filename: 'bundle.js'
   },
   module: {
