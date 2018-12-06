@@ -70,9 +70,6 @@ if(!isProd) {
 // Use routes
 app.use("/api/projects", projects);
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../../dist/index.html"));
-});
 //starts the server and listens for requests
 app.listen(port);
 console.log(`api running on port ${port}`);
