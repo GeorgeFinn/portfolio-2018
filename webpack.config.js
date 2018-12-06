@@ -6,12 +6,10 @@ const { NODE_ENV } = process.env;
 
 module.exports = {
   devtool: 'eval-source-map',
-  entry: {
-    app: [
+  entry: [
       path.resolve(__dirname, 'src/client/index.js'),
       'webpack-hot-middleware/client?reload=true'
-    ]
-  },
+    ],
   mode: 'development',
   output: {
     path: path.join(__dirname, './dist'),
