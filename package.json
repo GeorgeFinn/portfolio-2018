@@ -63,6 +63,6 @@
     "react-text-transition": "^0.1.6",
     "validator": "^10.9.0",
     "webfontloader": "^1.6.28",
-    "dotenv": "^6.2.0",
+    "dotenv": "^6.2.0"
   }
 }
