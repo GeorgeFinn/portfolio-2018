@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --progress --profile --colors && nodemon ./src/index.js",
     "build": "webpack-dev-server --open --mode production",
-    "prod": "NODE_ENV=production node src/index.js",
+    "prod": "node src/index.js",
     "clean": "rm -rf dist/*",
     "lint": "eslint ./",
     "lint-fix": "eslint --fix ./"
