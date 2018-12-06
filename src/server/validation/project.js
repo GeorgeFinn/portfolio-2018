@@ -1,12 +1,11 @@
 const Validator = require('validator')
-const _ = require('lodash')
 
 module.exports = function validateProjectInput(data) {
   let errors = {}
 
-  const validatorName = !_.isEmpty(data.name) ? data.name: ''
-  const validatorCategory = !_.isEmpty(data.category) ? data.category : ''
-  const validatorImageUrl = !_.isEmpty(data.imageUrl) ? data.imageUrl: ''
+  const validatorName = data.name.length !== 0 ? data.name: ''
+  const validatorCategory = data.category.length !== 0 ? data.category : ''
+  const validatorImageUrl = data.imageUrl.length !== 0 ? data.imageUrl: ''
 
   if(Validator.isEmpty(validatorName)) {
     errors.name = 'Project name is required'
@@ -20,6 +19,6 @@ module.exports = function validateProjectInput(data) {
 
   return {
     errors,
-    isValid: _.isEmpty(errors)
+    isValid: errors === {}
   }
 }
