@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin')
 const webpack = require('webpack');
 const path = require('path');
 
@@ -39,6 +40,9 @@ module.exports = {
     }),
     new webpack.NoEmitOnErrorsPlugin()
   ],
+  optimization: {
+    minimizer: [new UglifyWebpackPlugin({ sourceMap: true })],
+  },
   devServer: {
     contentBase: 'dist',
     historyApiFallback: true,
