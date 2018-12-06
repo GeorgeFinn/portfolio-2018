@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyWebpackPlugin = require('uglifyjs-webpack-plugin')
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const webpack = require('webpack');
 const path = require('path');
 
@@ -37,6 +38,9 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html'),
       inject: 'body',
       favicon: 'favicon.ico'
+    }),
+    new CompressionWebpackPlugin({
+      algorithm: "gzip"
     }),
     new webpack.NoEmitOnErrorsPlugin()
   ],

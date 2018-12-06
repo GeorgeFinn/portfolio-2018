@@ -64,8 +64,12 @@ if(!isProd) {
   );
   app.use(webpackHotMiddleware(compiler));
 } else {
-  const staticMiddleware = express.static("dist")
-  app.use(staticMiddleware)
+  // const staticMiddleware = express.static("dist")
+  // app.use(staticMiddleware)
+  const expressStaticGzip = require("express-static-gzip")
+  app.use(expressStaticGzip("dist", {
+    enableBrotli: true
+  }))
 }
 // Use routes
 app.use("/api/projects", projects);
