@@ -41,8 +41,11 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin()
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: 'dist',
     historyApiFallback: true,
-    stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
+    overlay: true,
+    stats: {
+      colors: true
+    }
   }
 };
