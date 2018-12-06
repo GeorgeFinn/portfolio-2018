@@ -8,7 +8,7 @@ export default class BackToTopButton extends Component {
 
     this.state = {
         intervalId: 0
-    };
+    }
   }
 
   scrollStep() {
