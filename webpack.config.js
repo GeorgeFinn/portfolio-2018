@@ -34,14 +34,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'georgefinn',
-      template: path.resolve(__dirname, 'src/client/public/index.html'),
+      template: path.resolve(__dirname, 'src/index.html'),
       inject: 'body',
       favicon: 'favicon.ico'
     }),
     new webpack.NoEmitOnErrorsPlugin()
   ],
   devServer: {
-    contentBase: './client/public',
+    contentBase: './dist',
     historyApiFallback: true,
     stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
   }

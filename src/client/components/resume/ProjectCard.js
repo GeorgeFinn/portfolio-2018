@@ -6,7 +6,7 @@ import { Span3, SecondarySpan3, RegularLarge } from '../../styles/text.styles'
 const ProjectCard = ({index, project}) => {
     const imgUrls = [];
     project.languages.forEach(language => {
-      const imgUrl = require('../../public/images/' + language + '.jpg')
+      const imgUrl = require('../../../images/' + language + '.jpg')
       imgUrls.push(imgUrl)
     })
     return (

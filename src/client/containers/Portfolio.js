@@ -50,7 +50,7 @@ class Portfolio extends Component {
     const pageTitle = "portfolio";
     const headerText = "Welcome to my playground";
     const buttonTitle = "View Resume";
-    const iconUrl = require("../public/images/arrow.svg");
+    const iconUrl = require("../../images/arrow.svg");
 
     const { tags, projects, currTag } = this.state;
 

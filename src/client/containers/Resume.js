@@ -63,7 +63,7 @@ class Resume extends Component {
     languages: ['HTML5', 'CSS3', 'TypeScript', 'Angular4']
   }]
 
-    const composeButton = require("../public/images/icon-email-2.svg");
+    const composeButton = require("../../images/icon-email-2.svg");
     const pageTitle = "resume";
     const headerText = "Developer Resume";
     const buttonTitle = "Email Me";

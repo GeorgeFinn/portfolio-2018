@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {LanguageCardContainer, LanguageImage, LanguageTitle} from '../../styles/resume.styles'
 import Fade from 'react-reveal/Fade'
 const LanguageCard = ({index, language}) => {
-  const imgUrl = require('../../public/images/' + language + '.jpg')
+  const imgUrl = require('../../../images/' + language + '.jpg')
   return <Fade bottom>
       <LanguageCardContainer>
         <LanguageImage src={imgUrl} alt={language} />

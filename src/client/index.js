@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 import App from "./containers/App";
 import Portfolio from "./containers/Portfolio"
@@ -14,19 +14,7 @@ WebFont.load({
   }
 });
 
-ReactDom.render(
-    <Router>
-      <Fragment>
-        <App>
-          <Route exact path="/" component={Portfolio} />
-          <Route exact path="/resume" component={Resume} />
-        </App>
-      </Fragment>
-    </Router>,
-  document.getElementById("app")
-);
-
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   main, html, body {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Roboto,"Open Sans", "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -46,5 +34,20 @@ injectGlobal`
     }
   }
 `
+
+ReactDom.render(
+    <Router>
+      <Fragment>
+        <App>
+          <Route exact path="/" component={Portfolio} />
+          <Route exact path="/resume" component={Resume} />
+        </App>
+        <GlobalStyle />
+      </Fragment>
+    </Router>,
+  document.getElementById("app")
+);
+
+
 
 module.hot.accept();

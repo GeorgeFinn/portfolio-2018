@@ -11,7 +11,7 @@ const projects = require("./routes/api/projects");
 const webpackConfig = require("../../webpack.config");
 
 //set our port to either a predetermined port number if you have set
-const port = process.env.API_PORT || 8080;
+const port = process.env.PORT || 8080;
 const compiler = webpack(webpackConfig);
 
 /*
@@ -44,22 +44,29 @@ app.use(bodyParser.json());
 /*
  * Configure Middleware
 */
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    contentBase: path.resolve(__dirname, "../client/public"),
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
-  })
-);
-app.use(webpackHotMiddleware(compiler));
 
+const isProd = process.env.NODE_ENV === "production"
+
+if(!isProd) {
+  app.use(
+    webpackDevMiddleware(compiler, {
+      publicPath: webpackConfig.output.publicPath,
+      contentBase: path.resolve(__dirname, "dist"),
+      stats: {
+        colors: true,
+        hash: false,
+        timings: true,
+        chunks: false,
+        chunkModules: false,
+        modules: false
+      }
+    })
+  );
+  app.use(webpackHotMiddleware(compiler));
+} else {
+  const staticMiddleware = express.static("dist")
+  app.use(staticMiddleware)
+}
 // Use routes
 app.use("/api/projects", projects);
 
