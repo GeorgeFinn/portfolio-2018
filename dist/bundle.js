@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "5576a721ff9dc0bec3dd";
+/******/ 	var hotCurrentHash = "edecee9fbfdf6cd6e328";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -35426,11 +35426,21 @@ function (_Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      setInterval(function () {
-        _this2.setState({
-          active: _this2.state.active + 1
-        });
+      this.timerID = setInterval(function () {
+        _this2.tick();
       }, 2000);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearInterval(this.timerID);
+    }
+  }, {
+    key: "tick",
+    value: function tick() {
+      this.setState({
+        active: this.state.active + 1
+      });
     }
   }, {
     key: "render",

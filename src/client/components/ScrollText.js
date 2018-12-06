@@ -20,11 +20,18 @@ class ScrollText extends Component {
     }
   }
   componentDidMount() {
-    setInterval(() => {
-      this.setState({ active: this.state.active + 1 });
+    this.timerID = setInterval(() => {
+      this.tick()
     }, 2000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timerID)
+  }
+
+  tick() {
+    this.setState({ active: this.state.active + 1 });
+  }
   render() {
     const { texts } = this.props
     return (
