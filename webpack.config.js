@@ -50,8 +50,9 @@ module.exports = {
     minimizer: [new UglifyWebpackPlugin({ sourceMap: true })],
   },
   devServer: {
-    contentBase: 'dist',
+    contentBase: './',
     historyApiFallback: true,
+    hot: true,
     overlay: true,
     stats: {
       colors: true

@@ -51,7 +51,7 @@ if(!isProd) {
   app.use(
     webpackDevMiddleware(compiler, {
       publicPath: webpackConfig.output.publicPath,
-      contentBase: path.resolve(__dirname, "dist"),
+      historyApiFallback: true,
       stats: {
         colors: true,
         hash: false,

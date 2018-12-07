@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Fade from 'react-reveal/Fade'
 import styled from 'styled-components'
 
 const ButtonContainer = styled.a`
@@ -32,12 +33,14 @@ const TitleText= styled.div`
 `
 
 const GradientEmailButton = ({ url, title, iconUrl }) => (
+  <Fade top>
   <ButtonContainer href={url}>
     <TitleText>
       {title}
     </TitleText>
     <ButtonImage src={iconUrl} styles={{ fill: '#000'}} />
   </ButtonContainer>
+  </Fade>
 );
 
 export default GradientEmailButton

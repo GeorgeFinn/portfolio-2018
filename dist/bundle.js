@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "fa304db849ad81169189";
+/******/ 	var hotCurrentHash = "3dadc6b0b88e09c63a5a";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -35171,19 +35171,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
 
-var ButtonContainer = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"]).withConfig({
+
+var ButtonContainer = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"]).withConfig({
   displayName: "GradientButton__ButtonContainer",
   componentId: "sc-19j5ms2-0"
 })(["background-image:linear-gradient(to right,#02aab0 0%,#00cdac 51%,#02aab0 100%);background-size:200% auto;transition:all .5s;padding:20px 25px;border-radius:10px;margin-bottom:100px;display:inline-block;vertical-align:middle;&:hover{background-position:right center;}"]);
-var ButtonImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.withConfig({
+var ButtonImage = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img.withConfig({
   displayName: "GradientButton__ButtonImage",
   componentId: "sc-19j5ms2-1"
 })(["vertical-align:middle;transition:all .5s;", ":hover &{transform:translateX(10px);}"], ButtonContainer);
-var TitleText = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+var TitleText = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "GradientButton__TitleText",
   componentId: "sc-19j5ms2-2"
 })(["display:inline-block;color:white;font-weight:200;font-size:1em;margin-right:40px;"]);
@@ -35192,14 +35195,16 @@ var GradientButton = function GradientButton(_ref) {
   var url = _ref.url,
       title = _ref.title,
       iconUrl = _ref.iconUrl;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonContainer, {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    top: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonContainer, {
     to: url
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleText, null, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonImage, {
     src: iconUrl,
     styles: {
       fill: '#000'
     }
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (GradientButton);
@@ -35218,19 +35223,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
 
-var ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
+
+var ButtonContainer = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].a.withConfig({
   displayName: "GradientEmailButton__ButtonContainer",
   componentId: "fqazxz-0"
 })(["background-image:linear-gradient(to right,#02aab0 0%,#00cdac 51%,#02aab0 100%);background-size:200% auto;transition:all .5s;padding:20px 25px;border-radius:10px;margin-bottom:100px;display:inline-block;vertical-align:middle;&:hover{background-position:right center;}"]);
-var ButtonImage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img.withConfig({
+var ButtonImage = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].img.withConfig({
   displayName: "GradientEmailButton__ButtonImage",
   componentId: "fqazxz-1"
 })(["vertical-align:middle;transition:all .5s;", ":hover &{transform:translateX(10px);}"], ButtonContainer);
-var TitleText = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+var TitleText = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div.withConfig({
   displayName: "GradientEmailButton__TitleText",
   componentId: "fqazxz-2"
 })(["display:inline-block;color:white;font-weight:200;font-size:1em;margin-right:40px;"]);
@@ -35239,14 +35247,16 @@ var GradientEmailButton = function GradientEmailButton(_ref) {
   var url = _ref.url,
       title = _ref.title,
       iconUrl = _ref.iconUrl;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonContainer, {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    top: true
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonContainer, {
     href: url
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleText, null, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ButtonImage, {
     src: iconUrl,
     styles: {
       fill: '#000'
     }
-  }));
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (GradientEmailButton);
@@ -36185,15 +36195,16 @@ webfontloader__WEBPACK_IMPORTED_MODULE_7___default.a.load({
   }
 });
 var GlobalStyle = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["createGlobalStyle"])(_templateObject());
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_App__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_App__WEBPACK_IMPORTED_MODULE_4__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
   exact: true,
   path: "/",
   component: _containers_Portfolio__WEBPACK_IMPORTED_MODULE_5__["default"]
 }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-  exact: true,
   path: "/resume",
   component: _containers_Resume__WEBPACK_IMPORTED_MODULE_6__["default"]
-})), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalStyle, null))), document.getElementById("app"));
+}), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
+  component: _containers_Portfolio__WEBPACK_IMPORTED_MODULE_5__["default"]
+}))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(GlobalStyle, null))), document.getElementById("app"));
 module.hot.accept();
 
 /***/ }),
