@@ -39,13 +39,10 @@ const GlobalStyle = createGlobalStyle`
 ReactDom.render(
     <Router>
       <Fragment>
-        <Switch>
         <App>
             <Route exact path="/" component={Portfolio} />
             <Route path="/resume" component={Resume} />
-            <Route component={Portfolio}/>
         </App>
-        </Switch>
         <GlobalStyle />
       </Fragment>
     </Router>,
