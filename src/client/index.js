@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import ReactDom from "react-dom";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
 
 import App from "./containers/App";
