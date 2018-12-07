@@ -23,7 +23,8 @@ module.exports = {
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       { test: /\.html$/, use: [{loader: 'html-loader', options: { minimize: true }}]},
-      { test: /\.(jpg|svg)$/, loader: 'file-loader'}
+      { test: /\.(jpg|svg)$/, loader: 'file-loader'},
+      {test: /\.ico$/i, loader: 'file?name=[name].[ext]'}
     ]
   },
   plugins: [
@@ -35,8 +36,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'georgefinn',
-      template: path.resolve(__dirname, 'src/index.html'),
-      inject: 'body',
+      hash: true,
+      template: './src/index.html',
+      filename: 'index.html',
       favicon: 'favicon.ico'
     }),
     new CompressionWebpackPlugin({

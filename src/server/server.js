@@ -75,6 +75,7 @@ if(!isProd) {
 app.use("/api/projects", projects);
 
 app.get("*", (req, res) => {
+  res.header('Content-Type', 'text/event-stream');
   res.sendFile(path.resolve(__dirname, "../../dist/index.html"));
 });
 //starts the server and listens for requests

@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b259b726de40b67c1e56";
+/******/ 	var hotCurrentHash = "f34c011a39224ff438ae";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -36160,7 +36160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var webfontloader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! webfontloader */ "./node_modules/webfontloader/webfontloader.js");
 /* harmony import */ var webfontloader__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(webfontloader__WEBPACK_IMPORTED_MODULE_7__);
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  main, html, body {\n    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Roboto,\"Open Sans\", \"Helvetica Neue\", sans-serif;\n    -webkit-font-smoothing: antialiased;\n    font-size: 20px;\n    margin: 0 auto;\n    padding: 0;\n    height: 100vh;\n    width: 80vw;\n  }\n  a {\n    color:#000;\n    text-decoration: none;\n    cursor: pointer;\n\n    &:hover {\n        color: $light_blue;\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  main, html, body {\n    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Roboto,\"Open Sans\", \"Helvetica Neue\", sans-serif;\n    -webkit-font-smoothing: antialiased;\n    font-size: 20px;\n    margin: 0 auto;\n    padding: 0;\n    height: 100vh;\n    width: 80vw;\n    -webkit-overflow-scrolling: touch;\n  }\n  a {\n    color:#000;\n    text-decoration: none;\n    cursor: pointer;\n\n    &:hover {\n        color: $light_blue;\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;

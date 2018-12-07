@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     height: 100vh;
     width: 80vw;
+    -webkit-overflow-scrolling: touch;
   }
   a {
     color:#000;
