@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f34c011a39224ff438ae";
+/******/ 	var hotCurrentHash = "fa304db849ad81169189";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -35636,7 +35636,7 @@ var CourseCard = function CourseCard(_ref) {
   var index = _ref.index,
       course = _ref.course;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    right: true
+    left: true
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_resume_styles__WEBPACK_IMPORTED_MODULE_1__["CourseCardContainer"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_resume_styles__WEBPACK_IMPORTED_MODULE_1__["CourseCardLeft"], null, index + 1 > 9 ? 'i' : index + 1), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_resume_styles__WEBPACK_IMPORTED_MODULE_1__["CourseCardRight"], null, course)));
 };
 

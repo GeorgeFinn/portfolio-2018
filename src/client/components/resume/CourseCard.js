@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade'
 
 
 const CourseCard = ({index, course}) => {
-  return <Fade right>
+  return <Fade left>
     <CourseCardContainer>
       <CourseCardLeft>
         {index + 1 > 9 ? 'i' : index + 1}
