@@ -7,7 +7,7 @@ export const ProjectListContainer = styled.div`
   grid-gap: 40px;
 `
 
-export const ProjectCard = styled.div`
+export const ProjectCard = styled.a`
   transition: all .4s;
   border-radius: 10px;
   display: inline-block;

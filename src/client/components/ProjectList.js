@@ -3,7 +3,7 @@ import {ProjectCard, ProjectImg, ProjectCardDetails, ProjectCategory, ProjectDat
 import Fade from 'react-reveal/Fade'
 
 const Project = props => (
-    <ProjectCard>
+    <ProjectCard href={props.url} target="_blank">
       <ProjectImg src={props.imageUrl} alt={props.name} />
       <ProjectCardDetails>
         <ProjectCategory>{props.category}</ProjectCategory>
@@ -17,7 +17,7 @@ const Project = props => (
 const ProjectList = ({ projects, currTag }) => {
   const projectItems = projects
     .filter(({category}) => category === currTag || currTag === 'All')
-    .map(project => <Project key={project.name} name={project.name} category={project.category} imageUrl={project.imageUrl} />)
+    .map(project => <Project key={project.name} name={project.name} category={project.category} imageUrl={project.imageUrl} url={project.url} />)
   return     <Fade cascade><ProjectListContainer>{projectItems}</ProjectListContainer>    </Fade>
 }
 

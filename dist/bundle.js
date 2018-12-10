@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "65e591c1596aed6d29e8";
+/******/ 	var hotCurrentHash = "7ef589dd5f50ae53eb55";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -35341,7 +35341,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Project = function Project(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectCard"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectImg"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectCard"], {
+    href: props.url,
+    target: "_blank"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectImg"], {
     src: props.imageUrl,
     alt: props.name
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectCardDetails"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectCategory"], null, props.category), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectDate"], null, "October 2018"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_project_grid_styles__WEBPACK_IMPORTED_MODULE_1__["ProjectName"], null, props.name)));
@@ -35358,7 +35361,8 @@ var ProjectList = function ProjectList(_ref) {
       key: project.name,
       name: project.name,
       category: project.category,
-      imageUrl: project.imageUrl
+      imageUrl: project.imageUrl,
+      url: project.url
     });
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -36229,7 +36233,7 @@ var ProjectListContainer = styled_components__WEBPACK_IMPORTED_MODULE_0__["defau
   displayName: "project-gridstyles__ProjectListContainer",
   componentId: "sc-8f50b7-0"
 })(["margin-top:100px;display:grid;grid-template-columns:repeat(auto-fill,minmax(325px,1fr));grid-gap:40px;"]);
-var ProjectCard = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
+var ProjectCard = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].a.withConfig({
   displayName: "project-gridstyles__ProjectCard",
   componentId: "sc-8f50b7-1"
 })(["transition:all .4s;border-radius:10px;display:inline-block;overflow:hidden;&:hover{box-shadow:0px 10px 40px rgba(0,0,0,0.2);cursor:pointer;}"]);
