@@ -11,10 +11,13 @@ const ProjectSchema = new Schema({
   imageUrl: {
     type: String
   },
+  url: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now
   }
 })
-
-module.exports = Project = mongoose.model('project', ProjectSchema)
+const Project = mongoose.model('project', ProjectSchema)
+module.exports = Project

@@ -46,9 +46,5 @@ ReactDom.render(
         <GlobalStyle />
       </Fragment>
     </Router>,
-  document.getElementById("app")
+  document.getElementById("react-root")
 );
-
-
-
-module.hot.accept();

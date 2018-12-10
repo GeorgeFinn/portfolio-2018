@@ -1,19 +1,11 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
-const webpack = require("webpack");
-const path = require("path");
-const webpackDevMiddleware = require("webpack-dev-middleware");
-const webpackHotMiddleware = require("webpack-hot-middleware");
+import express from "express"
+const app = express();
+import path from "path"
+import mongoose from "mongoose"
+import bodyParser from "body-parser"
 
 //and create our instances
 const projects = require("./routes/api/projects");
-const webpackConfig = require("../../webpack.config");
-
-//set our port to either a predetermined port number if you have set
-const port = process.env.PORT || 8080;
-const compiler = webpack(webpackConfig);
-
 /*
  * Configure Mongoose
 */
@@ -37,7 +29,6 @@ mongoose
 /*
  * Configure Express
 */
-const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -45,39 +36,45 @@ app.use(bodyParser.json());
  * Configure Middleware
 */
 
-const isProd = process.env.NODE_ENV === "production"
+const isProd = process.env.NODE_ENV === "production";
+if (!isProd) {
+  const webpack = require("webpack");
+  const config = require("../../config/webpack.dev.js");
+  const compiler = webpack(config);
 
-if(!isProd) {
-  app.use(
-    webpackDevMiddleware(compiler, {
-      publicPath: webpackConfig.output.publicPath,
-      historyApiFallback: true,
-      stats: {
-        colors: true,
-        hash: false,
-        timings: true,
-        chunks: false,
-        chunkModules: false,
-        modules: false
-      }
-    })
+  const webpackDevMiddleware = require("webpack-dev-middleware")(
+    compiler,
+    config.devServer
   );
-  app.use(webpackHotMiddleware(compiler));
-} else {
+
+  const webpackHotMiddlware = require("webpack-hot-middleware")(
+    compiler,
+    config.devServer
+  );
+
+  app.use(webpackDevMiddleware);
+  app.use(webpackHotMiddlware);
+  console.log("Middleware enabled")
+}
   // const staticMiddleware = express.static("dist")
   // app.use(staticMiddleware)
-  const expressStaticGzip = require("express-static-gzip")
-  app.use(expressStaticGzip("dist", {
-    enableBrotli: true
-  }))
-}
+const expressStaticGzip = require("express-static-gzip")
+app.use(expressStaticGzip("dist", {
+  enableBrotli: true
+}))
 // Use routes
 app.use("/api/projects", projects);
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../../dist/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
-app.get("/*", (req, res) => {
-  // res.header('Content-Type', 'text/event-stream');
-  res.sendFile(path.resolve(__dirname, "../../dist/index.html"));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(
+    `Server listening on http://localhost:${PORT} in ${process.env.NODE_ENV}`
+  );
 });
-//starts the server and listens for requests
-app.listen(port);
-console.log(`api running on port ${port}`);

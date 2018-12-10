@@ -38,6 +38,7 @@ class ScrollText extends Component {
       <ScrollTextContainer>
       <ScrollTextItem>
       <TextTransition
+        style={{ height: "auto" }}
         text={ texts[this.state.active % texts.length] }
       />
       </ScrollTextItem>
