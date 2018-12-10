@@ -60,7 +60,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: "./src/index.ejs",
       inject: true,
-      title: "WebpackBoilerplate"
+      title: "georgefinn"
     }),
     new BundleAnalyzerPlugin({
       generateStatsFile: true

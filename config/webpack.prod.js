@@ -72,7 +72,7 @@ module.exports = env => {
       new HTMLWebpackPlugin({
         template: "./src/index.ejs",
         inject: true,
-        title: "WebpackBoilerplate"
+        title: "georgefinn"
       }),
       new CompressionPlugin({
         algorithm: "gzip"
