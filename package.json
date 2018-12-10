@@ -20,6 +20,7 @@
   "author": "georgefinn <george.finn@me.com>",
   "license": "ISC",
   "dependencies": {
+    "@babel/register": "^7.0.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
@@ -49,7 +50,6 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.2.0",
     "eslint": "^5.10.0",
     "eslint-config-airbnb": "^17.1.0",
