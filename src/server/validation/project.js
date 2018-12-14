@@ -6,6 +6,8 @@ module.exports = function validateProjectInput(data) {
   const validatorName = data.name.length !== 0 ? data.name: ''
   const validatorCategory = data.category.length !== 0 ? data.category : ''
   const validatorImageUrl = data.imageUrl.length !== 0 ? data.imageUrl: ''
+  const validateUrl = data.url.length !== 0 ? data.url: ''
+
 
   if(Validator.isEmpty(validatorName)) {
     errors.name = 'Project name is required'
@@ -15,6 +17,9 @@ module.exports = function validateProjectInput(data) {
   }
   if(Validator.isEmpty(validatorImageUrl)) {
     errors.imageUrl = 'Project imageUrl is required'
+  }
+  if(Validator.isEmpty(validateUrl)) {
+    errors.url = 'Project url is required'
   }
 
   return {
