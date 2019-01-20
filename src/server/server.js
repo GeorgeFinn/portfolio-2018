@@ -1,14 +1,14 @@
-import express from "express"
+import express from "express";
 const app = express();
-import path from "path"
-import mongoose from "mongoose"
-import bodyParser from "body-parser"
+import path from "path";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
 
 //and create our instances
 const projects = require("./routes/api/projects");
 /*
  * Configure Mongoose
-*/
+ */
 mongoose.Promise = global.Promise;
 mongoose
   .connect(
@@ -28,13 +28,13 @@ mongoose
   });
 /*
  * Configure Express
-*/
+ */
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /*
  * Configure Middleware
-*/
+ */
 
 const isProd = process.env.NODE_ENV === "production";
 if (!isProd) {
@@ -54,23 +54,27 @@ if (!isProd) {
 
   app.use(webpackDevMiddleware);
   app.use(webpackHotMiddlware);
-  console.log("Middleware enabled")
+  console.log("Middleware enabled");
 }
+{
   // const staticMiddleware = express.static("dist")
   // app.use(staticMiddleware)
-const expressStaticGzip = require("express-static-gzip")
-app.use(expressStaticGzip("dist", {
-  enableBrotli: true
-}))
+  const expressStaticGzip = require("express-static-gzip");
+  app.use(
+    expressStaticGzip("dist", {
+      enableBrotli: true
+    })
+  );
+}
 // Use routes
 app.use("/api/projects", projects);
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, '../../dist/index.html'), function(err) {
+app.get("/*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../../dist/index.html"), function(err) {
     if (err) {
-      res.status(500).send(err)
+      res.status(500).send(err);
     }
-  })
-})
+  });
+});
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

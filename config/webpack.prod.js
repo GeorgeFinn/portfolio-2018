@@ -3,12 +3,12 @@ const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
-const CompressionPlugin = require("compression-webpack-plugin")
-const BrotliPlugin = require("brotli-webpack-plugin")
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const CompressionPlugin = require("compression-webpack-plugin");
+const BrotliPlugin = require("brotli-webpack-plugin");
 
 module.exports = env => {
-    return {
+  return {
     name: "client",
     entry: {
       vendor: ["react", "react-dom"],
@@ -24,15 +24,15 @@ module.exports = env => {
     optimization: {
       minimizer: [new UglifyJSPlugin()],
       splitChunks: {
-      chunks: "initial",
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendor"
+        chunks: "initial",
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendor"
+          }
         }
       }
-    }
-  },
+    },
     module: {
       rules: [
         { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
@@ -44,7 +44,7 @@ module.exports = env => {
           ]
         },
         {
-          test: /\.(jpg|svg)$/,
+          test: /\.(jpg|svg|png)$/,
           use: [
             {
               loader: "file-loader",
@@ -72,7 +72,8 @@ module.exports = env => {
       new HTMLWebpackPlugin({
         template: "./src/index.ejs",
         inject: true,
-        title: "georgefinn"
+        title: "Career Planner MVP",
+        favicon: "favicon.ico"
       }),
       new CompressionPlugin({
         algorithm: "gzip"
@@ -80,4 +81,4 @@ module.exports = env => {
       new BrotliPlugin()
     ]
   };
-}
+};

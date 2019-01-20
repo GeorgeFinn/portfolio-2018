@@ -1,13 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin
 
 module.exports = {
   entry: {
-    main: [
-      "webpack-hot-middleware/client?reload=true",
-      "./src/main.js"]
+    main: ["webpack-hot-middleware/client?reload=true", "./src/main.js"]
   },
   mode: "development",
   output: {
@@ -39,10 +36,16 @@ module.exports = {
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
-      { test: /\.css$/, use: [{ loader: "style-loader" }, { loader: "css-loader" }]},
-      { test: /\.(jpg|svg)$/, use: [
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      },
+      {
+        test: /\.(jpg|svg|png)$/,
+        use: [
           {
-            loader: "file-loader", options: {
+            loader: "file-loader",
+            options: {
               name: "images/[name].[ext]"
             }
           }
@@ -61,9 +64,6 @@ module.exports = {
       template: "./src/index.ejs",
       inject: true,
       title: "georgefinn"
-    }),
-    new BundleAnalyzerPlugin({
-      generateStatsFile: true
     })
   ]
 };
