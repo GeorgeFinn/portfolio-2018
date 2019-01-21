@@ -72,7 +72,7 @@ module.exports = env => {
       new HTMLWebpackPlugin({
         template: "./src/index.ejs",
         inject: true,
-        title: "Career Planner MVP",
+        title: "georgefinn",
         favicon: "favicon.ico"
       }),
       new CompressionPlugin({
