@@ -7,7 +7,7 @@ import {
   ProjectDate,
   ProjectName,
   ProjectListContainer
-} from "../styles/project-grid.styles";
+} from "../styles/ProjectList.styles";
 import Fade from "react-reveal/Fade";
 import moment from "moment";
 

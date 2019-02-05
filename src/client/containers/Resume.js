@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
-
+import { withTheme } from "styled-components";
 import {
   ResumeContainer,
   AboutContainer,
   CourseworkContainer,
   LanguagesContainer,
-  ProjectsContainer
+  ProjectsContainer,
+  HeaderContainer
 } from "../styles/shared-grid.styles";
 import {
   Heading1,
   Heading3,
   RegularLarge,
-  SecondaryHeading1,
   Heading2,
-  SecondaryHeading2
+  Regular
 } from "../styles/text.styles";
+
 import Header from "../components/Header";
 import CoursesList from "../components/resume/CoursesList";
 import LanguagesList from "../components/resume/LanguagesList";
@@ -23,7 +24,6 @@ import ProjectsList from "../components/resume/ProjectsList";
 import BackToTopButton from "../components/resume/BackToTopButton";
 import GradientEmailButton from "../components/GradientEmailButton";
 import ScrollText from "../components/ScrollText";
-import { HeaderContainer } from "../styles/shared-grid.styles";
 
 class Resume extends Component {
   handleEmail = e => {
@@ -81,7 +81,6 @@ class Resume extends Component {
         languages: ["HTML5", "CSS3", "TypeScript", "Angular4"]
       }
     ];
-
     const composeButton = require("../../images/icon-email-2.svg");
     const pageTitle = "resume";
     const headerText = "Developer Resume";
@@ -100,6 +99,8 @@ class Resume extends Component {
       "play guitar",
       "obsessively clean"
     ];
+
+    const { secondary } = this.props.theme;
     return (
       <ResumeContainer>
         <HeaderContainer>
@@ -122,7 +123,7 @@ class Resume extends Component {
               <br />
               In my free time I like to <ScrollText texts={hobbies} />.<br />
               My most prized possession is my <br />
-              <span style={{ color: "#22AA99", fontWeight: "600" }}>
+              <span style={{ color: `${secondary}`, fontWeight: "600" }}>
                 @me.com
               </span>{" "}
               email domain.
@@ -135,12 +136,12 @@ class Resume extends Component {
         </CourseworkContainer>
         <LanguagesContainer>
           <Heading3>Programming Languages</Heading3>
-          <div>
+          <Regular>
             Here is a list of various languages <br />
             I have learned over the past couple
             <br />
             years.
-          </div>
+          </Regular>
           <LanguagesList languages={languages} />
         </LanguagesContainer>
         <ProjectsContainer>
@@ -155,4 +156,4 @@ class Resume extends Component {
   }
 }
 
-export default Resume;
+export default withTheme(Resume);

@@ -1,16 +1,16 @@
 import React, { Fragment } from "react";
 import ReactDom from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 import App from "./containers/App";
-import Portfolio from "./containers/Portfolio"
-import Resume from './containers/Resume'
-import WebFont from 'webfontloader';
+import Portfolio from "./containers/Portfolio";
+import Resume from "./containers/Resume";
+import WebFont from "webfontloader";
 
 WebFont.load({
   google: {
-    families: ['Montserrat:300,400,600,700', 'sans-serif']
+    families: ["Montserrat:300,400,600,700", "sans-serif"]
   }
 });
 
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     padding: 0;
     height: 100vh;
-    width: 80vw;
+    width: 100vw;
     -webkit-overflow-scrolling: touch;
   }
   a {
@@ -34,17 +34,17 @@ const GlobalStyle = createGlobalStyle`
         color: $light_blue;
     }
   }
-`
+`;
 
 ReactDom.render(
-    <Router>
-      <Fragment>
-        <App>
-            <Route exact path="/" component={Portfolio} />
-            <Route path="/resume" component={Resume} />
-        </App>
-        <GlobalStyle />
-      </Fragment>
-    </Router>,
+  <Router>
+    <Fragment>
+      <App>
+        <Route exact path="/" component={Portfolio} />
+        <Route path="/resume" component={Resume} />
+      </App>
+      <GlobalStyle />
+    </Fragment>
+  </Router>,
   document.getElementById("react-root")
 );

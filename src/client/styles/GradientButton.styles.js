@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Fade from "react-reveal/Fade";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const ButtonContainer = styled.a`
+export const ButtonContainer = styled(Link)`
   background-image: linear-gradient(
     to right,
     ${props => props.theme.gradientOne} 0%,
     ${props => props.theme.gradientTwo} 51%,
     ${props => props.theme.gradientOne} 100%
   );
+  color: #fff;
   background-size: 200% auto;
   transition: all 0.5s;
   padding: 20px 25px;
@@ -21,7 +20,7 @@ const ButtonContainer = styled.a`
     background-position: right center;
   }
 `;
-const ButtonImage = styled.img`
+export const ButtonImage = styled.img`
   vertical-align: middle;
   transition: all 0.5s;
   ${ButtonContainer}:hover & {
@@ -29,21 +28,9 @@ const ButtonImage = styled.img`
   }
 `;
 
-const TitleText = styled.div`
+export const TitleText = styled.div`
   display: inline-block;
-  color: white;
   font-weight: 200;
   font-size: 1em;
   margin-right: 40px;
 `;
-
-const GradientEmailButton = ({ url, title, iconUrl }) => (
-  <Fade top>
-    <ButtonContainer href={url}>
-      <TitleText>{title}</TitleText>
-      <ButtonImage src={iconUrl} styles={{ fill: "#000" }} />
-    </ButtonContainer>
-  </Fade>
-);
-
-export default GradientEmailButton;

@@ -1,46 +1,19 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Fade from 'react-reveal/Fade'
-import styled from 'styled-components'
-
-const ButtonContainer = styled(Link)`
-  background-image: linear-gradient(to right, #02aab0 0%, #00cdac 51%, #02aab0 100%);
-  background-size: 200% auto;
-  transition: all .5s;
-  padding: 20px 25px;
-  border-radius: 10px;
-  margin-bottom: 100px;
-  display: inline-block;
-  vertical-align: middle;
-  &:hover {
-      background-position: right center;
-    }
-`
-const ButtonImage = styled.img`
-  vertical-align: middle;
-  transition: all .5s;
-  ${ButtonContainer}:hover & {
-    transform: translateX(10px);
-  }
-`
-
-const TitleText= styled.div`
-    display: inline-block;
-    color: white;
-    font-weight: 200;
-    font-size: 1em;
-    margin-right: 40px;
-`
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Fade from "react-reveal/Fade";
+import {
+  TitleText,
+  ButtonImage,
+  ButtonContainer
+} from "../styles/GradientButton.styles";
 
 const GradientButton = ({ url, title, iconUrl }) => (
   <Fade top>
-  <ButtonContainer to={url}>
-    <TitleText>
-      {title}
-    </TitleText>
-    <ButtonImage src={iconUrl} styles={{ fill: '#000'}} />
-  </ButtonContainer>
+    <ButtonContainer to={url}>
+      <TitleText>{title}</TitleText>
+      <ButtonImage src={iconUrl} styles={{ fill: "#000" }} />
+    </ButtonContainer>
   </Fade>
 );
 
-export default GradientButton
+export default GradientButton;

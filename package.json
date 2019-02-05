@@ -46,6 +46,7 @@
     "react-router-dom": "^4.3.1",
     "react-text-transition": "^0.1.6",
     "styled-components": "^4.1.2",
+    "suncalc": "^1.8.0",
     "validator": "^10.9.0",
     "webfontloader": "^1.6.28",
     "webpack-dev-middleware": "^3.3.0",
