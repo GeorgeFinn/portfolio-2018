@@ -1,9 +1,9 @@
 export const lightTheme = {
   bg: "#fff",
   primaryText: "#000",
-  secondary: "#22AA99",
-  gradientOne: "#02aab0",
-  gradientTwo: "#00cdac",
+  secondary: "#F6444B",
+  gradientOne: "#ee0979",
+  gradientTwo: "#ff6a00",
   shadow: "rgba(198, 208, 235, 0.5) 0px 10px 20px",
   shadowHover: "rgb(198, 208, 235) 0px 30px 60px",
   name: "light"

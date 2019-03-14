@@ -22,9 +22,8 @@ const Project = props => (
   </ProjectCard>
 );
 
-const ProjectList = ({ projects, currTag }) => {
+const ProjectList = ({ projects }) => {
   const projectItems = projects
-    .filter(({ category }) => category === currTag || currTag === "All")
     .reverse()
     .map(project => (
       <Project

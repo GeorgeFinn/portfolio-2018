@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ThemeProvider } from "styled-components";
 import * as suncalc from "suncalc";
+import WebFont from "webfontloader";
+import { createGlobalStyle } from "styled-components";
 
 import { lightTheme, darkTheme } from "../themes/default";
 
@@ -20,7 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     this.updateTheme();
-    this.intervalID = setInterval(() => this.updateTheme(), 5000);
+    // this.intervalID = setInterval(() => this.updateTheme(), 5000);
   }
   componentWillUnmount() {
     clearInterval(this.intervalID);
@@ -49,10 +51,40 @@ class App extends Component {
   render() {
     const { children } = this.props;
     const { theme } = this.state;
+
+    WebFont.load({
+      google: {
+        families: ["Montserrat:300,400,600,700", "sans-serif"]
+      }
+    });
+
+    const GlobalStyle = createGlobalStyle`
+      main, html, body {
+        font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Roboto,"Open Sans", "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 20px;
+        margin: 0 auto;
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        -webkit-overflow-scrolling: touch;
+      }
+      a {
+        color:#000;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+            color: $light_blue;
+        }
+      }
+    `;
+
     return (
       <ThemeProvider theme={theme}>
         <main style={{ backgroundColor: this.state.theme.bg, height: "auto" }}>
           {children}
+          <GlobalStyle />
         </main>
       </ThemeProvider>
     );
