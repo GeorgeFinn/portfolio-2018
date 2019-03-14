@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { RouteContainer } from "./styles/animation.styles";
 import { PoseGroup } from "react-pose";
-import Portfolio from "./containers/portfolio";
-import Resume from "./containers/resume";
+import Portfolio from "./containers/Portfolio";
+import Resume from "./containers/Resume";
 import SeniorDesign from "./containers/SeniorDesign";
 import SmartHome from "./containers/SmartHome";
 
