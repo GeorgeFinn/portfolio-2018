@@ -53,12 +53,12 @@ class Footer extends Component {
         <IconButton
           imageUrl={githubIcon}
           name="Github"
-          url="https://www.google.com"
+          url="https://github.com/GeorgeFinn"
         />
         <IconButton
           imageUrl={codepenIcon}
           name="Codepen"
-          url="https://www.google.com"
+          url="https://codepen.io/georgefinn"
         />
       </FooterContainer>
     );
