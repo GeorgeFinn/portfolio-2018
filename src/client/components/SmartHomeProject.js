@@ -25,9 +25,8 @@ const StaggerVisualizer = styled.div`
   width: 1100px;
   height: 500px;
   position: absolute;
-  @media (max-width: 700px) {
-    top: 25%;
-    transform: translateY(-50%);
+  @media (max-width: 770px) {
+    display: none;
   }
 `;
 const DotsWrapper = styled.div`
@@ -77,11 +76,11 @@ const DateText = styled.div`
   font-weight: 600;
   margin-left: 50px;
 `;
-
+var animation;
 class SmartHomeProject extends Component {
   componentDidMount() {
     function fitElementToParent(el, padding) {
-      var timeout = null;
+      var timeout = 10;
       function resize() {
         if (timeout) clearTimeout(timeout);
         anime.set(el, { scale: 1 });
@@ -90,7 +89,7 @@ class SmartHomeProject extends Component {
         var elOffsetWidth = el.offsetWidth - pad;
         var parentOffsetWidth = parentEl.offsetWidth;
         var ratio = parentOffsetWidth / elOffsetWidth;
-        timeout = setTimeout(anime.set(el, { scale: ratio }), 15);
+        timeout = setTimeout(anime.set(el, { scale: ratio }), 10);
       }
       resize();
       window.addEventListener("resize", resize);
@@ -101,7 +100,7 @@ class SmartHomeProject extends Component {
     var grid = [20, 10];
     var cell = 55;
     var numberOfElements = grid[0] * grid[1];
-    var animation;
+
     var paused = true;
     fitElementToParent(staggerVisualizerEl, 0);
     for (var i = 0; i < numberOfElements; i++) {
@@ -111,7 +110,6 @@ class SmartHomeProject extends Component {
     }
     dotsWrapperEl.appendChild(dotsFragment);
     var index = anime.random(0, numberOfElements - 1);
-    var nextIndex = 0;
     anime.set(".stagger-visualizer .cursor", {
       translateX: anime.stagger(-cell, { grid: grid, from: index, axis: "x" }),
       translateY: anime.stagger(-cell, { grid: grid, from: index, axis: "y" }),
@@ -122,7 +120,7 @@ class SmartHomeProject extends Component {
       paused = false;
       if (animation) animation.pause();
 
-      nextIndex = anime.random(0, numberOfElements - 1);
+      var nextIndex = anime.random(0, numberOfElements - 1);
 
       animation = anime
         .timeline({
@@ -198,16 +196,19 @@ class SmartHomeProject extends Component {
               })
             },
             scale: 1.5,
-            easing: "cubicBezier(.075, .2, .165, 1)"
+            easing: "cubicBezier(.075, .2, .165, 1)",
+            delay: 300
           },
           "-=800"
         );
-
       index = nextIndex;
     }
-
     play();
   }
+  componentWillUnmount() {
+    animation.pause();
+  }
+
   render() {
     return (
       <SmartHome>

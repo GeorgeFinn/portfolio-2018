@@ -23,8 +23,6 @@ class Portfolio extends Component {
     };
   }
 
-  componentDidMount() {}
-
   render() {
     const pageTitle = "portfolio";
     const headerText = "Welcome to my playground";

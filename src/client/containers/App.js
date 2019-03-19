@@ -37,7 +37,7 @@ class App extends Component {
     } else {
       this.setState({
         time: time,
-        theme: darkTheme
+        theme: lightTheme
       });
     }
   }

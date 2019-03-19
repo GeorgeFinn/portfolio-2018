@@ -100,7 +100,6 @@ class Resume extends Component {
       "obsessively clean"
     ];
 
-    const { secondary } = this.props.theme;
     return (
       <ResumeContainer>
         <HeaderContainer>
@@ -123,10 +122,7 @@ class Resume extends Component {
               <br />
               In my free time I like to <ScrollText texts={hobbies} />.<br />
               My most prized possession is my <br />
-              <span style={{ color: `${secondary}`, fontWeight: "600" }}>
-                @me.com
-              </span>{" "}
-              email domain.
+              <span style={{ fontWeight: "600" }}>@me.com</span> email domain.
             </RegularLarge>
           </AboutContainer>
         </Fade>
@@ -156,4 +152,4 @@ class Resume extends Component {
   }
 }
 
-export default withTheme(Resume);
+export default Resume;
