@@ -102,16 +102,35 @@ class MainProject extends Component {
           direction={"alternate"}
           loop={true}
           easing={"linear"}
+          key={1 + Date.now()}
         >
           <Sun size={100} src={require("../../images/sun.svg")} />
         </Anime>
-        <Anime translateX={1500} duration={50000} loop={true} easing={"linear"}>
+        <Anime
+          translateX={1500}
+          duration={50000}
+          loop={true}
+          easing={"linear"}
+          key={2 + Date.now()}
+        >
           <Rainbow size={100} src={require("../../images/rainbow.svg")} />
         </Anime>
-        <Anime translateX={1500} duration={12500} loop={true} easing={"linear"}>
+        <Anime
+          translateX={1500}
+          duration={12500}
+          loop={true}
+          easing={"linear"}
+          key={3 + Date.now()}
+        >
           <CloudOne size={100} src={require("../../images/cloud.svg")} />
         </Anime>
-        <Anime translateX={1500} duration={15000} loop={true} easing={"linear"}>
+        <Anime
+          translateX={1500}
+          duration={15000}
+          loop={true}
+          easing={"linear"}
+          key={4 + Date.now()}
+        >
           <CloudTwo size={100} src={require("../../images/cloud.svg")} />
         </Anime>
         <Anime
@@ -120,6 +139,7 @@ class MainProject extends Component {
           delay={3000}
           loop={true}
           easing={"linear"}
+          key={5 + Date.now()}
         >
           <CloudThree size={100} src={require("../../images/cloud2.svg")} />
         </Anime>
@@ -129,6 +149,7 @@ class MainProject extends Component {
           direction={"alternate"}
           loop={true}
           easing={"linear"}
+          key={6 + Date.now()}
         >
           <Bird size={80} src={require("../../images/bird.svg")} />
         </Anime>
@@ -138,6 +159,7 @@ class MainProject extends Component {
           direction={"alternate"}
           loop={true}
           easing={"linear"}
+          key={7 + Date.now()}
         >
           <Tree size={150} src={require("../../images/tree.svg")} />
         </Anime>
