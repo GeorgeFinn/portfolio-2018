@@ -39,6 +39,7 @@ const Item = styled(animated.div)`
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: white;
 `;
 
 const StackTitle = styled.div``;

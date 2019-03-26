@@ -16,14 +16,13 @@ class InfoSlide extends Component {
   render() {
     return (
       <InfoContainer>
-        <h2>Overview</h2>
-        <div>
+        <h2>
           When job seeking, comparing opportunities can be time consuming and
           frustrating. We created a web application which allows users to
           calculate and compare career opportunities. Career Planner utilizes
           data from thousands of careers, locations and colleges to calculate
           the best plans.
-        </div>
+        </h2>
       </InfoContainer>
     );
   }

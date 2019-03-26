@@ -11,9 +11,9 @@ const BackButton = styled.img`
   padding: 20px;
   &:hover {
     transform: translateX(10px);
-    cursor: pointer;
   }
 `;
+
 const SmartHomeContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -24,6 +24,34 @@ const SmartHomeContainer = styled.div`
   font-weight: 800;
   font-size: 1em;
 `;
+
+const SmartHomeCard = styled.div`
+  width: 80%;
+  color: white;
+  border-radius: 25px;
+  background-color: #ee0979;
+  transition: all 0.3s;
+  overflow: hidden;
+  box-shadow: rgba(198, 208, 235, 0.5) 0px 10px 20px;
+  text-align: center;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: rgb(198, 208, 235) 0px 30px 60px;
+  }
+`;
+const MockImage = styled.img`
+  height: 50%;
+  min-height: 300px;
+  padding-left: 25px;
+  transition: all 0.3s;
+  ${SmartHomeCard}:hover & {
+    transform: translateY(30px);
+  }
+`;
+
+const TitleText = styled.h1`
+  margin-top: 80px;
+`;
 class SmartHome extends Component {
   render() {
     return (
@@ -32,7 +60,13 @@ class SmartHome extends Component {
           <BackButton src={require("../../images/icon-back.svg")} alt="back" />
         </Link>
         <SmartHomeContainer>
-          <h1>Workin' on making my home smart...</h1>
+          <SmartHomeCard>
+            <TitleText>Workin' on making my home smart...</TitleText>
+            <MockImage
+              src={require("../../images/SmartHomeMockUps.png")}
+              alt="mock"
+            />
+          </SmartHomeCard>
         </SmartHomeContainer>
       </>
     );
