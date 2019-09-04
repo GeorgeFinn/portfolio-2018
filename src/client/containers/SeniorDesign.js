@@ -1,19 +1,37 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Slider from "../shared/Slider";
+import InfoSlide from "../shared/InfoSlide";
+import StackSlide from "../shared/StackSlide";
+import VisitSlide from "../shared/VisitSlide";
 
-const Container = styled.div``;
-
-class SeniorDesign extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      position: 0
-    };
+const BackButton = styled.img`
+  height: 40px;
+  margin-bottom: 10px;
+  transition: all 0.4s;
+  &:hover {
+    transform: translateX(10px);
+    cursor: pointer;
   }
-
+`;
+class SeniorDesign extends Component {
   render() {
-    return <Slider />;
+    return (
+      <div style={{ paddingBottom: "50px" }}>
+        <div style={{ margin: "50px" }}>
+          <Link to="/">
+            <BackButton
+              src={require("../../images/icon-back.svg")}
+              alt="back"
+            />
+          </Link>
+        </div>
+
+        <InfoSlide />
+        <StackSlide />
+        <VisitSlide />
+      </div>
+    );
   }
 }
 

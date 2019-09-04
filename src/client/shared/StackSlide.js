@@ -11,7 +11,8 @@ import {
 import data from "./data";
 
 const StackContainer = styled.div`
-  padding: 20px;
+  margin: 0 10%;
+  text-align: center;
 `;
 const Container = styled(animated.div)`
   display: grid;
