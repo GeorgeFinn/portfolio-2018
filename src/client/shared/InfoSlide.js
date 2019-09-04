@@ -16,6 +16,7 @@ class InfoSlide extends Component {
   render() {
     return (
       <InfoContainer>
+        <h1 style={{ color: "#23b8f0" }}>Career Planner</h1>
         <h2>
           When job seeking, comparing opportunities can be time consuming and
           frustrating. We created a web application which allows users to

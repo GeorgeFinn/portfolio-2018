@@ -5,6 +5,7 @@ import {
   ResumeContainer,
   AboutContainer,
   CourseworkContainer,
+  SelfLearningContainer,
   LanguagesContainer,
   ProjectsContainer,
   HeaderContainer
@@ -12,6 +13,7 @@ import {
 import {
   Heading1,
   Heading3,
+  Heading4,
   RegularLarge,
   Heading2,
   Regular
@@ -21,6 +23,7 @@ import Header from "../components/Header";
 import CoursesList from "../components/resume/CoursesList";
 import LanguagesList from "../components/resume/LanguagesList";
 import ProjectsList from "../components/resume/ProjectsList";
+import SelfLearningList from "../components/resume/SelfLearningList";
 import BackToTopButton from "../components/resume/BackToTopButton";
 import GradientEmailButton from "../components/GradientEmailButton";
 import ScrollText from "../components/ScrollText";
@@ -43,6 +46,49 @@ class Resume extends Component {
       "Artificial Intelligence",
       "Augmented Reality Experiences",
       "Advanced Angular 4"
+    ];
+    const designTopics = ["FramerX", "AffinityDesigner", "Sketch", "Figma"];
+
+    const microserviceTopics = [
+      "Spring Cloud Config",
+      "Client side load balancing w/ Ribbon",
+      "Eureka Naming Server",
+      "Zuul API Gateway for logging",
+      "Zipkin Distributed Tracing",
+      "Fault Tolerance with Hystrix"
+    ];
+
+    const frontEndTopics = [
+      "React Redux",
+      "React Context API",
+      "React Hooks",
+      "Unit Testing with Jest",
+      "Styled-Components"
+    ];
+
+    const backEndTopics = [
+      "Java Spring Boot REST APIs",
+      "Node REST APIs",
+      "JWT Security",
+      "Passwordless Authentication"
+    ];
+
+    const deploymentTopics = [
+      "Bundling with Webpack",
+      "AWS Elastic Beanstalk",
+      "AWS S3",
+      "AWS CI/CD",
+      "Docker"
+    ];
+
+    const AITopics = [
+      "Linear Regression",
+      "Logistic Regression",
+      "Gradient Descent",
+      "Backpropagation",
+      "Batch Gradient Descent",
+      "Momentum",
+      "Adaptive Learning Rates"
     ];
 
     const languages = [
@@ -86,14 +132,16 @@ class Resume extends Component {
     const headerText = "Developer Resume";
     const buttonTitle = "Email Me";
     const texts = [
-      "Rose-Hulman Senior",
+      "Rose-Hulman graduate",
       "Computer Science Major",
-      "Math Minor"
+      "Rose Hulman CSSE Senior Capstone winner"
     ];
     const hobbies = [
       "cook",
       "paint",
       "build speakers",
+      "grind on personal projects",
+      "automate life",
       "design",
       "work out",
       "play guitar",
@@ -130,6 +178,24 @@ class Resume extends Component {
           <Heading3>Academic Coursework</Heading3>
           <CoursesList courses={courses} />
         </CourseworkContainer>
+        <SelfLearningContainer>
+          <Heading3>Self Learning</Heading3>
+          <Regular>
+            Topics I have learning for personal projects & hobbies.
+          </Regular>
+          <Heading4>Design Tools</Heading4>
+          <SelfLearningList topics={designTopics} />
+          <Heading4>Front-end</Heading4>
+          <SelfLearningList topics={frontEndTopics} />
+          <Heading4>Back-end</Heading4>
+          <SelfLearningList topics={backEndTopics} />
+          <Heading4>Deployment</Heading4>
+          <SelfLearningList topics={deploymentTopics} />
+          <Heading4>Microservices</Heading4>
+          <SelfLearningList topics={microserviceTopics} />
+          <Heading4>Artificial Intelligence</Heading4>
+          <SelfLearningList topics={AITopics} />
+        </SelfLearningContainer>
         <LanguagesContainer>
           <Heading3>Programming Languages</Heading3>
           <Regular>

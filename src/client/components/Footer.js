@@ -46,7 +46,6 @@ const IconButton = ({ imageUrl, name, url }) => (
 class Footer extends Component {
   render() {
     const githubIcon = require("../../images/github-icon.svg");
-    const codepenIcon = require("../../images/codepen-icon.svg");
 
     return (
       <FooterContainer>
@@ -54,11 +53,6 @@ class Footer extends Component {
           imageUrl={githubIcon}
           name="Github"
           url="https://github.com/GeorgeFinn"
-        />
-        <IconButton
-          imageUrl={codepenIcon}
-          name="Codepen"
-          url="https://codepen.io/georgefinn"
         />
       </FooterContainer>
     );

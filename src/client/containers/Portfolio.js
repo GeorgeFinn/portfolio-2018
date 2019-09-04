@@ -7,7 +7,6 @@ import Header from "../components/Header";
 import GradientButton from "../components/GradientButton";
 import ProjectList from "../components/ProjectList";
 import MainProject from "../components/MainProject";
-import SmartHomeProject from "../components/SmartHomeProject";
 import Footer from "../components/Footer";
 import {
   PortfolioContainer,
@@ -39,9 +38,6 @@ class Portfolio extends Component {
         <ContentContainer>
           <Link to="/seniordesign">
             <MainProject />
-          </Link>
-          <Link to="smarthome">
-            <SmartHomeProject />
           </Link>
         </ContentContainer>
         <FooterContainer>

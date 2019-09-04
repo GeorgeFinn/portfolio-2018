@@ -40,9 +40,10 @@ export const AboutContainer = styled.div`
 `;
 
 export const CourseworkContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  margin-bottom: 200px;
+`;
+
+export const SelfLearningContainer = styled.div`
   margin-bottom: 200px;
 `;
 
@@ -62,4 +63,10 @@ export const ProjectsContainer = styled.div`
 
 export const ProjectsListContainer = styled.div`
   margin-top: 100px;
+`;
+
+export const SelfLearningGridContainer = styled.div`
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
 `;

@@ -29,7 +29,7 @@ export const RegularLarge = styled.div`
 `;
 
 export const Heading4 = styled.h4`
-  color: ${props => props.theme.primaryText};
+  color: ${props => props.theme.secondary};
   font-size: 1em;
 `;
 

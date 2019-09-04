@@ -20,8 +20,8 @@ export const CourseCardLeft = styled.div`
   color: ${props => props.theme.secondary};
   font-weight: 700;
   font-size: 1.5em;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const CourseCardRight = styled.div`
@@ -89,4 +89,24 @@ export const BackToTopButtonContainer = styled.button`
     transform: translateY(-5px);
     border: 2px solid ${props => props.theme.secondary};
   }
+`;
+
+export const SelfLearningCardContainer = styled.div`
+  color: ${props => props.theme.primaryText};
+  text-align: center;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgb(198, 208, 235);
+  box-shadow: ${props => props.theme.shadow};
+  transition: all 0.4s;
+  &:hover {
+    box-shadow: ${props => props.theme.shadowHover};
+    transform: translateY(-10px);
+  }
+`;
+
+export const SelfLearningTitle = styled.div`
+  font-weight: 400;
+  margin: 10px auto;
 `;

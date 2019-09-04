@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { absolute } from "../Utilities";
-import TitleSlide from "./TitleSlide";
 import InfoSlide from "./InfoSlide";
 import StackSlide from "./StackSlide";
 import VisitSlide from "./VisitSlide";
@@ -55,11 +54,6 @@ export default function Slider() {
   const pages = [
     ({ style }) => (
       <AnimeSlide style={{ ...style, background: "#fff" }}>
-        <TitleSlide />
-      </AnimeSlide>
-    ),
-    ({ style }) => (
-      <AnimeSlide style={{ ...style, background: "#fff" }}>
         <InfoSlide />
       </AnimeSlide>
     ),
@@ -75,7 +69,7 @@ export default function Slider() {
     )
   ];
   const [index, set] = useState(0);
-  const onClick = useCallback(() => set(state => (state + 1) % 4), []);
+  const onClick = useCallback(() => set(state => (state + 1) % 3), []);
   const transitions = useTransition(index, p => p, {
     from: { opacity: 0, transform: "translate3d(0,100%,0)" },
     enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
@@ -93,7 +87,7 @@ export default function Slider() {
           </Link>
         </div>
         0{index + 1}
-        <span style={{ color: "#000" }}> / 04</span>
+        <span style={{ color: "#000" }}> / 03</span>
       </PageCount>
       <Main onClick={onClick}>
         {transitions.map(({ item, props, key }) => {
